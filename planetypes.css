@@ -1,0 +1,46 @@
+
+.wall {
+    background-image: url("resources/wall.png");
+    background-size: 100px 100px;
+/*     border: 1px solid #444; */
+}
+
+.wood {
+    background-image: url("resources/wood.jpg");
+    background-size: 100px 100px;
+}
+
+.floor { 
+    background-image: url("resources/floor.png");
+/*     background-size: 100px 100px; */
+/*     background-color: green; */
+/*     backface-visibility: hidden; */
+}
+
+.ground { 
+    background-image: url("resources/grass.png");
+/*     background-size: 100px 100px; */
+/*     background-color: green; */
+    backface-visibility: hidden;
+}
+
+.tree { 
+/*     background-image: url("resources/tree.png"); */
+/*     background-size: 200px 400px; */
+    width: 200px;
+    height: 500px;
+    backface-visibility: visible;
+}
+
+.ceiling {
+    background-image: url("resources/ceiling.png");
+    background-size: 100px 100px;
+}
+
+
+.sign {
+    background-color: #EBE8E8;
+    position: absolute;
+    border: 5px solid #522900;
+    padding: 20px;
+}
