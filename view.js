@@ -28,8 +28,8 @@ class View {
     }
     
     apply(elem, perspective){
-//         translateZ(${perspective|0}px)
         elem.style.transform = `
+        translateZ(${perspective|0}px)
         rotateX(${-this.pitch}rad)
         rotateY(${-this.yaw}rad)
         rotateZ(${-this.roll}rad)
