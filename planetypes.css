@@ -1,8 +1,7 @@
 
-.wall {
+.stonewall {
     background-image: url("resources/wall.png");
     background-size: 100px 100px;
-/*     border: 1px solid #444; */
 }
 
 .wood {
@@ -10,29 +9,22 @@
     background-size: 100px 100px;
 }
 
-.floor { 
+.stonefloor { 
     background-image: url("resources/floor.png");
-/*     background-size: 100px 100px; */
-/*     background-color: green; */
-/*     backface-visibility: hidden; */
 }
 
-.ground { 
+.grassground { 
     background-image: url("resources/grass.png");
-/*     background-size: 100px 100px; */
-/*     background-color: green; */
     backface-visibility: hidden;
 }
 
 .tree { 
-/*     background-image: url("resources/tree.png"); */
-/*     background-size: 200px 400px; */
     width: 200px;
     height: 500px;
     backface-visibility: visible;
 }
 
-.ceiling {
+.stoneceiling {
     background-image: url("resources/ceiling.png");
     background-size: 100px 100px;
 }

@@ -21,22 +21,16 @@ function main(){
     var root = document.getElementById("root");
     var world = new World(root)
     
-    for (var obj of WORLDMAP){
-        world.addObject(obj);
+//     for (var obj of WORLDMAP){
+//         world.addObject(obj);
+//     }
+    for (var name in Map.models){
+        world.addModel(name, Map.models[name]);
     }
-//     world.addObject({
-//             "t": "wall",
-//             "x": 1000,
-//             "z": -500,
-//             "z2": 100,
-//             "top": -400,
-//             "html": "<div class=\"sign\">HELLO</div>"
-//         });
-//     world.addObject({
-//             "t": "tree",
-//             "x": -500,
-//             "z": -1000
-//         });
+//     console.log(world.models[Map.root]);
+    var htmodel = world.models[Map.root]
+    console.log(htmodel);
+    world.addObject(htmodel);
     
     var player = new Player();
     
@@ -44,6 +38,8 @@ function main(){
     window.state = state;
     
     setInterval(update, FRAMETIME*1000, state);
+    
+    
     
 }
 

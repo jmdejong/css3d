@@ -34,3 +34,12 @@ function ndef(val, defaultValue){
 }
 
 
+
+function ajaxGet(file, callback){
+    var req = new XMLHttpRequest();
+    req.addEventListener("load", resp => callback(resp, req));
+    req.open("GET", file+"?t="+Date.now());
+    req.send();
+    return req;
+}
+
