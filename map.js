@@ -131,6 +131,20 @@ Map.models = {
                 t: "forest",
                 x: -1500,
                 z: -200,
+            },
+            {
+                t: "wall",
+                x: 0,
+                z: -800,
+                x2: 800,
+                top: -400,
+                classes: "wood",
+                html: `
+<div class="sign" style="left: 50px; right: 50px; top: 50px; bottom: 100px">
+    <h1>Hello town (and others)</h1>
+    <p>Everything you see around here are html elements, placed in a 3d environment using css 3d transformations.</p>
+    <p>Move with WSQE, turn with AD, look up/down with RF</p>
+</div>`
             }
         ]
     }

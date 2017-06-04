@@ -43,3 +43,44 @@ function ajaxGet(file, callback){
     return req;
 }
 
+
+
+
+// based on http://stackoverflow.com/questions/979975/how-to-get-the-value-from-the-get-parameters
+// todo: does url decoding work properly?
+var queryString = function () {
+    // This function is anonymous, is executed immediately and 
+    // the return value is assigned to QueryString!
+    var queryParams = {};
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        if (typeof pair[1] === "undefined") {
+            pair[1] = true;
+        }
+        queryParams[pair[0]] = decodeURIComponent(pair[1]);
+    } 
+    return queryParams;
+}();
+
+
+var importScript = (function (oHead) {
+
+  function loadError (oError) {
+    throw new URIError("The script " + oError.target.src + " is not accessible.");
+  }
+
+  return function (sSrc, fOnload) {
+    var oScript = document.createElement("script");
+    oScript.type = "text\/javascript";
+    oScript.onerror = loadError;
+    if (fOnload) { oScript.onload = fOnload; }
+    oHead.appendChild(oScript);
+    oScript.src = sSrc;
+  }
+
+})(document.head || document.getElementsByTagName("head")[0]);
+
+
+

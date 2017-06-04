@@ -21,11 +21,7 @@ function main(){
     var root = document.getElementById("root");
     var world = new World(root)
     
-    var screlem = document.createElement("script");
-    screlem.src = "testscript.js";
-    document.head.appendChild(screlem);
-    console.log(screlem);
-    window.screlem = screlem;
+//     importScript("testscript.js");
     
     for (var name in Map.models){
         world.addModel(name, Map.models[name]);
