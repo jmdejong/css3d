@@ -21,15 +21,16 @@ function main(){
     var root = document.getElementById("root");
     var world = new World(root)
     
-//     for (var obj of WORLDMAP){
-//         world.addObject(obj);
-//     }
+    var screlem = document.createElement("script");
+    screlem.src = "testscript.js";
+    document.head.appendChild(screlem);
+    console.log(screlem);
+    window.screlem = screlem;
+    
     for (var name in Map.models){
         world.addModel(name, Map.models[name]);
     }
-//     console.log(world.models[Map.root]);
-    var htmodel = world.models[Map.root]
-    console.log(htmodel);
+    var htmodel = world.models[Map.root];
     world.addObject(htmodel);
     
     var player = new Player();

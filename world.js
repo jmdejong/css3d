@@ -42,15 +42,10 @@ class World {
             var proto = this.models[type];
             var data = mergeDecl(proto, obj)
             data.t = proto.t;
-//             console.log(type, data);
             if (data.t != type){
                 base = this.make(data);
             }
         }
-//         if (!base){
-//             console.log(obj, type);
-//         }
-//         console.log("BASE", base, type, obj)
         if (obj.make){
             return obj.make(base, obj, this);
         }
@@ -147,41 +142,10 @@ var baseModels = {
             `;
             for (var part of data.parts){
                 var node = world.make(part);
-//                 console.log(node);
                 e.appendChild(node);
             }
             return e;
         }
-    },
-    stonewall: {t: "wall", "classes": ["stonewall"]},
-    grassground: {t: "flat", "classes": ["grassground"]},
-    stonefloor:  {t: "flat", "classes": ["stonefloor"]},
-    ceiling:  {t: "flat", "classes": ["stoneceiling"]},
-    tree: {t: "compound", 
-        parts:[
-            {
-                t: "wall",
-                x: -100,
-                z: -100,
-                x2: 100,
-                z2: 100,
-                top: -600,
-                bottom: 0,
-                ht: "img",
-                src: "resources/tree.png"
-            },
-            {
-                t: "wall",
-                x: -100,
-                z: 100,
-                x2: 100,
-                z2: -100,
-                top: -600,
-                bottom: 0,
-                ht: "img",
-                src: "resources/tree.png"
-            }
-        ]
     }
 };
 

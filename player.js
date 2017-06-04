@@ -38,7 +38,7 @@ class Player {
     }
     
     setView(view){
-        view.place(this.x, this.y-180, this.z)
+        view.place(this.x, this.y-160, this.z)
         view.setEuler(this.dir, this.pitch, 0);
     }
 }
