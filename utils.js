@@ -48,7 +48,7 @@ function ajaxGet(file, callback){
 
 // based on http://stackoverflow.com/questions/979975/how-to-get-the-value-from-the-get-parameters
 // todo: does url decoding work properly?
-var queryString = function () {
+var QueryParams = function () {
     // This function is anonymous, is executed immediately and 
     // the return value is assigned to QueryString!
     var queryParams = {};

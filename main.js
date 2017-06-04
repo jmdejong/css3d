@@ -7,7 +7,6 @@ function update(state){
     state.player.setView(state.view);
     var widthStr = window.getComputedStyle(outerframe).width;
     widthStr = widthStr.substr(0, widthStr.length-2);
-//     console.log(widthStr);
     state.world.view(state.view, Number.parseInt(widthStr));
 }
 
@@ -21,13 +20,21 @@ function main(){
     var root = document.getElementById("root");
     var world = new World(root)
     
-//     importScript("testscript.js");
-    
-    for (var name in Map.models){
-        world.addModel(name, Map.models[name]);
+    var mapname;
+    if (QueryParams.map){
+        mapname = "maps/"+QueryParams.map;
+    } else {
+        mapname = "map.js";
     }
-    var htmodel = world.models[Map.root];
-    world.addObject(htmodel);
+    
+    importScript(mapname, function(){
+        for (var name in Map.models){
+            world.addModel(name, Map.models[name]);
+        }
+        var htmodel = world.models[Map.root];
+        world.addObject(htmodel);
+    });
+    
     
     var player = new Player();
     
@@ -39,6 +46,5 @@ function main(){
     
     
 }
-
 
 window.addEventListener('load', main);
