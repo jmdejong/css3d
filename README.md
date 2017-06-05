@@ -32,8 +32,8 @@ Map should have the property "models", which is a dictionary (just a js object) 
 
 The "models" dictionary has as keys the name of a model, and as values the declaration.
 
-This is an example of the tree model:
-    "tree": {
+This is an example of the tree model:  
+    {
         "t": "compound", 
         "parts":[
             {
@@ -60,6 +60,12 @@ This is an example of the tree model:
             }
         ]
     }
+
+The program will turn that eventually into this html:  
+    <div class="c3d" style="transform: translate3d(987px, 0px, 898px);">
+        <img class="c3d" src="resources/tree.png" style="transform: translate3d(-100px, -600px, -100px) rotateY(-0.785398rad); width: 282px; height: 600px;">
+        <img class="c3d" src="resources/tree.png" style="transform: translate3d(-100px, -600px, 100px) rotateY(0.785398rad); width: 282px; height: 600px;">
+    </div>
 
 The 't' property gives the type of the model.
 Built in types are "base", "wall", "flat" and "compound".
@@ -92,7 +98,7 @@ This allows them the following properties:
  - z2: z position of the bottom side of the element. Must be larger than z.
  - y: vertical positon of this plane. Defaults to 0.
 
-"compound objects have these properties:__
+"compound objects have these properties:  
  - x: x position. Defaults to 0.
  - z : z position. Defaults to 0.
  - y: y position. Defaults to 0.
