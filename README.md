@@ -32,7 +32,8 @@ Map should have the property "models", which is a dictionary (just a js object) 
 
 The "models" dictionary has as keys the name of a model, and as values the declaration.
 
-This is an example of the tree model:  
+This is an example of the tree model:
+
     {
         "t": "compound", 
         "parts":[
@@ -61,7 +62,8 @@ This is an example of the tree model:
         ]
     }
 
-The program will turn that eventually into this html:  
+The program will turn that eventually into this html:
+
     <div class="c3d" style="transform: translate3d(987px, 0px, 898px);">
         <img class="c3d" src="resources/tree.png" style="transform: translate3d(-100px, -600px, -100px) rotateY(-0.785398rad); width: 282px; height: 600px;">
         <img class="c3d" src="resources/tree.png" style="transform: translate3d(-100px, -600px, 100px) rotateY(0.785398rad); width: 282px; height: 600px;">
